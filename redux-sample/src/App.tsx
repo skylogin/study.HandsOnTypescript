@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import './App.css';
 import { USER_TYPE } from './store/UserReducer';
 import { POST_TYPE } from './store/PostReducer';
 
