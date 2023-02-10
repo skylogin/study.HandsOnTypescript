@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import LeftMenu from './components/areas/LeftMenu';
@@ -7,15 +8,15 @@ import Nav from './components/areas/Nav';
 import RightMenu from './components/areas/RightMenu';
 import SideBar from './components/areas/sidebar/SideBar';
 
+import Home from './components/routes/Home';
+
 function App() {
+  const renderHome = (props: any) => <Home {...props} />;
   return (
-    <div className="App">
-      <Nav />
-      <SideBar />
-      <LeftMenu />
-      <Main />
-      <RightMenu />
-    </div>
+    <Switch>
+      <Route exact={true} path="/" render={renderHome} />
+      <Route path="/categorythreads/:categoryId" render={renderHome} />
+    </Switch>
   );
 }
 
