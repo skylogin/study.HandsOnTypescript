@@ -5,7 +5,7 @@ import ReactModal from "react-modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-import { useWindowDimensions } from '../hooks/useWindowDimensions';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 import SideBarMenus from './sidebar/SideBarMenus';
 
 const Nav = () => {

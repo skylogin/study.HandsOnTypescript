@@ -9,10 +9,10 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { AppState } from "../../store/AppState"
-import { UserProfileSetType } from "../../store/user/Reducer";
+import { AppState } from "../../../store/AppState"
+import { UserProfileSetType } from "../../../store/user/Reducer";
 
-import Registration from "../auth/Registration";
+import Registration from "../../auth/Registration";
 
 const SideBarMenus = () => {
   const [showRegister, setShowRegister] = useState(false);

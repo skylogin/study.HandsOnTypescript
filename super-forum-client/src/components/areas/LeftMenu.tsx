@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useWindowDimensions } from '../hooks/useWindowDimensions';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 
-import Category from '../models/Category';
-import { getCategories } from '../services/DataService';
+import Category from '../../models/Category';
+import { getCategories } from '../../services/DataService';
 
 import './LeftMenu.css';
 
@@ -19,7 +19,7 @@ const LeftMenu = () => {
         });
         setCategories(<ul className="category">{cats}</ul>);
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.log(err);
       });
   }, []);
