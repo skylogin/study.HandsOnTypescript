@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
 import Thread from "../../../models/Thread";
+import ThreadPointsBar from "../../points/ThreadPointsBar";
 
 
 interface ThreadCardProps {
@@ -67,26 +68,6 @@ const ThreadCard: FC<ThreadCardProps> = ({ thread }) => {
     return null;
   }
 
-  const getPointsNonMobile = () => {
-    if(width > 768){
-      return (
-        <div className="threadcard-points">
-          <div className="threadcard-points-item">
-            {thread.points || 0}
-            <br />
-            <FontAwesomeIcon icon={faHeart} className="points-icon" />
-          </div>
-          <div className="threadcard-points-item" style={{ marginBottom: ".75em" }}>
-            {thread && thread.threadItems && thread.threadItems.length}
-            <br />
-            <FontAwesomeIcon icon={faReplyAll} className="points-icon" />
-          </div>
-        </div>
-      );
-    }
-    return null;
-  }
-
   return (
     <section className="panel threadcard-container">
       <div className="threadcard-txt-container">
@@ -130,7 +111,12 @@ const ThreadCard: FC<ThreadCardProps> = ({ thread }) => {
           </div>
         </div>
       </div>
-      {getPointsNonMobile()}
+      <ThreadPointsBar 
+        points={thread?.points || 0}
+        responseCount={
+          thread && thread.threadItems && thread.threadItems.length
+        }
+      />
     </section>
   )
 }
